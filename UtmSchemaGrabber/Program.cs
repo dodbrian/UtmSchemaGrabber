@@ -11,6 +11,16 @@ namespace UtmSchemaGrabber
     {
         private static void Main(string[] args)
         {
+            if (args.Length < 1)
+            {
+                Console.WriteLine("\nИспользование: UtmSchemaGrabber.exe http://<UtmAddress>:<port>");
+                Console.WriteLine("где:\n\t<UtmAddress> - полный адрес УТМ");
+                Console.WriteLine("\t<port> - порт, на котором работает УТМ\n");
+                Console.WriteLine("Пример: UtmSchemaGrabber.exe http://localhost:8080");
+
+                return;
+            }
+
             var client = new HttpClient();
             var regexList = new Regex("\\.load\\('info/(?<Folder>.+?)/(?<Filename>(?:.+?)(?:'|\\.xsd))",
                     RegexOptions.IgnoreCase
