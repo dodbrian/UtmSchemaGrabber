@@ -22,3 +22,4 @@ UtmSchemaGrabber.exe http://localhost:8080
 1.0.12|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.12.7z
 1.0.13|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.13.7z
 1.0.14|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.14.7z
+1.0.15|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.15.7z
