@@ -19,7 +19,8 @@ UtmSchemaGrabber.exe http://localhost:8080
 ## Архивы XSD-схем
 Версия (тестовые УТМ)|Ссылка
 ---|---
-1.0.12|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.12.7z
-1.0.13|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.13.7z
-1.0.14|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.14.7z
-1.0.15|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.15.7z
+1.0.12|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.12.zip
+1.0.13|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.13.zip
+1.0.14|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.14.zip
+1.0.15|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.15.zip
+1.0.16|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.16.zip
