@@ -1,26 +1,33 @@
 # UtmSchemaGrabber
+
 Загрузчик XSD-схем из УТМ (Универсальный транспортный модуль) ЕГАИС
 
 ## Описание
+
 Необходимые разработчикам XSD-схемы входят в состав УТМ и доступны по ссылкам в его веб-интерфейсе, при этом, однако, нет возможности загрузить их в одном месте в виде архива. UtmSchemaGrabber позволяет автоматизировать процесс загрузки и избавляет от необходимости скачивать файлы по одному вручную.
 
 ## Использование
+
 ```
 UtmSchemaGrabber.exe http://<UtmAddress>:<port>
 ```
+
 где:
 \<UtmAddress\> - полный адрес УТМ, \<port\> - порт, на котором работает УТМ
 
 Пример:
+
 ```
 UtmSchemaGrabber.exe http://localhost:8080
 ```
 
-## Архивы XSD-схем
-Версия (тестовые УТМ)|Ссылка
----|---
-1.0.12|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.12.zip
-1.0.13|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.13.zip
-1.0.14|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.14.zip
-1.0.15|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.15.zip
-1.0.16|https://github.com/dodbrian/UtmSchemaGrabber/raw/master/Schemas/EgaisXsd-1.0.16.zip
+## Архивы XSD-схем по версиям
+
+- [1.0.12 (тестовый)](Schemas/EgaisXsd-1.0.12.zip)
+- [1.0.13 (тестовый)](Schemas/EgaisXsd-1.0.13.zip)
+- [1.0.14 (тестовый)](Schemas/EgaisXsd-1.0.14.zip)
+- [1.0.15 (тестовый)](Schemas/EgaisXsd-1.0.15.zip)
+- [1.0.16 (тестовый)](Schemas/EgaisXsd-1.0.16.zip)
+- [2.1.6](Schemas/xsd_2.1.6.zip)
+- [3.0.8](Schemas/EgaisXsd-3.0.8.zip)
+- [4.0.2](Schemas/xsd_4.0.2.zip)
