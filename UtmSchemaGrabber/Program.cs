@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace UtmSchemaGrabber
 {
@@ -26,6 +27,14 @@ namespace UtmSchemaGrabber
                 return;
             }
 
+            Task
+                .Run(async () => await MainAsync(args))
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        private static async Task MainAsync(string[] args)
+        {
             var regexList = new Regex("\\.load\\('info/(?<Folder>.+?)/(?<Filename>(?:.+?)(?:'|\\.xsd))",
                     RegexOptions.IgnoreCase
                     | RegexOptions.Multiline
@@ -48,7 +57,9 @@ namespace UtmSchemaGrabber
             {
                 using (var client = new HttpClient())
                 {
-                    var mainPage = client.GetStringAsync(new Uri(args[0])).GetAwaiter().GetResult();
+                    var utmAddress = new Uri(args[0]);
+                    
+                    var mainPage = await client.GetStringAsync(utmAddress);
                     var matches = regexList.Matches(WebUtility.HtmlDecode(mainPage));
 
                     if (matches.Count == 0)
@@ -61,7 +72,7 @@ namespace UtmSchemaGrabber
                         .Where(x => x.Groups["Filename"].Value.EndsWith(".xsd", StringComparison.InvariantCultureIgnoreCase))
                         .Select(x => new
                         {
-                            Url = $"{args[0]}/info/{x.Groups["Folder"]}/{x.Groups["Filename"]}",
+                            Url = $"{utmAddress.AbsoluteUri}info/{x.Groups["Folder"]}/{x.Groups["Filename"]}",
                             FileName = $@"\{x.Groups["Folder"]}\{x.Groups["Filename"]}"
                         })
                         .ToList();
@@ -83,7 +94,7 @@ namespace UtmSchemaGrabber
                     foreach (var file in listOfFiles)
                     {
                         Console.WriteLine(file.FileName);
-                        var html = client.GetStringAsync(file.Url).GetAwaiter().GetResult();
+                        var html = await client.GetStringAsync(file.Url);
                         var match = regexPre.Match(html).Groups[1].Value;
                         File.WriteAllText(rootDir.FullName + file.FileName, WebUtility.HtmlDecode(match));
                     }
